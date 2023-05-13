@@ -14,18 +14,22 @@ try{
   }
   
   async function callback(): Promise<void> {
+    appDiv.innerHTML = "<h1>Callback executed.</h1>";
     console.log('Callback executed.');
   }
   
   async function run(): Promise<void> {
+    appDiv.innerHTML = "<h1>Before Callback.</h1>";
     console.log('Before callback.');
   
     await delay(2000); // Wait for 2000 milliseconds
   
+    appDiv.innerHTML = "<h1>After callback.</h1>";
     console.log('After callback.');
   
     await callback(); // Execute the callback asynchronously
   
+    appDiv.innerHTML = "<h1>Callback finished.</h1>";
     console.log('Callback finished.');
   }
   
